@@ -31,7 +31,7 @@ class :uc:packageServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/:lc:package.php', ':lc:package');
+        $this->mergeConfigFrom(__DIR__.'/../../config/:lc:package.php', ':lc:package');
 
         // Register the service the package provides.
         $this->app->singleton(':lc:package', function ($app) {
