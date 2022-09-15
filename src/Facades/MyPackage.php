@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Facade;
  * Class :uc:package
  *
  * @author :author_name <:author_email>
+ *
+ * @see :uc:vendor\:uc:package\Services\:uc:package
  */
 class :uc:package extends Facade
 {
