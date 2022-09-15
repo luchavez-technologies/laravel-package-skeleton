@@ -1,11 +1,19 @@
 <?php
 
-namespace :uc:vendor\:uc:package;
+namespace :uc:vendor\:uc:package\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Fligno\StarterKit\Providers\BaseStarterKitServiceProvider as ServiceProvider;
+use :uc:vendor\:uc:package\Services\:uc:package;
 
+/**
+ * Class :uc:packageServiceProvider
+ *
+ * @author :author_name <:author_email>
+ */
 class :uc:packageServiceProvider extends ServiceProvider
 {
+    protected array $commands = [];
+
     /**
      * Perform post-registration booting of services.
      *
@@ -13,15 +21,7 @@ class :uc:packageServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', ':lc:vendor');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', ':lc:vendor');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
-
-        // Publishing is only necessary when using the CLI.
-        if ($this->app->runningInConsole()) {
-            $this->bootForConsole();
-        }
+        parent::boot();
     }
 
     /**
@@ -44,7 +44,7 @@ class :uc:packageServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return [':lc:package'];
     }
@@ -58,7 +58,7 @@ class :uc:packageServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/:lc:package.php' => config_path(':lc:package.php'),
+            __DIR__.'/../../config/:lc:package.php' => config_path(':lc:package.php'),
         ], ':lc:package.config');
 
         // Publishing the views.
@@ -77,6 +77,6 @@ class :uc:packageServiceProvider extends ServiceProvider
         ], ':lc:package.views');*/
 
         // Registering package commands.
-        // $this->commands([]);
+         $this->commands($this->commands);
     }
 }

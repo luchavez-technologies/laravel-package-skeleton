@@ -4,6 +4,11 @@ namespace :uc:vendor\:uc:package\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * Class :uc:package
+ *
+ * @author :author_name <:author_email>
+ */
 class :uc:package extends Facade
 {
     /**
