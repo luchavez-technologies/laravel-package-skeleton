@@ -51,8 +51,9 @@
             }
         },
         "branch-alias": {
-            "dev-master": "1.x.x-master",
-            "dev-develop": "1.x.x-develop"
+            "dev-main": "1.0.x-main",
+            "dev-master": "1.0.x-master",
+            "dev-develop": "1.0.x-develop"
         }
     }
 }
