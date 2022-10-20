@@ -12,7 +12,67 @@ use :uc:vendor\:uc:package\Services\:uc:package;
  */
 class :uc:packageServiceProvider extends ServiceProvider
 {
+    /**
+     * @var array
+     */
     protected array $commands = [];
+
+    /**
+     * @var string|null
+     */
+    protected string|null $route_prefix = null;
+
+    /**
+     * @var bool
+     */
+    protected bool $prefix_route_with_file_name = false;
+
+    /**
+     * @var bool
+     */
+    protected bool $prefix_route_with_directory = false;
+
+    /**
+     * Polymorphism Morph Map
+     *
+     * @link    https://laravel.com/docs/8.x/eloquent-relationships#custom-polymorphic-types
+     *
+     * @example [ 'user' => User::class ]
+     *
+     * @var array
+     */
+    protected array $morph_map = [];
+
+    /**
+     * Laravel Observer Map
+     *
+     * @link    https://laravel.com/docs/8.x/eloquent#observers
+     *
+     * @example [ UserObserver::class => User::class ]
+     *
+     * @var array
+     */
+    protected array $observer_map = [];
+
+    /**
+     * Laravel Policy Map
+     *
+     * @link    https://laravel.com/docs/8.x/authorization#registering-policies
+     *
+     * @example [ UserPolicy::class => User::class ]
+     *
+     * @var array
+     */
+    protected array $policy_map = [];
+
+    /**
+     * Laravel Repository Map
+     *
+     * @example [ UserRepository::class => User::class ]
+     *
+     * @var array
+     */
+    protected array $repository_map = [];
 
     /**
      * Perform post-registration booting of services.
@@ -31,12 +91,12 @@ class :uc:packageServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../../config/:lc:package.php', ':lc:package');
-
         // Register the service the package provides.
         $this->app->singleton(':lc:package', function ($app) {
             return new :uc:package;
         });
+
+        parent::register();
     }
 
     /**
