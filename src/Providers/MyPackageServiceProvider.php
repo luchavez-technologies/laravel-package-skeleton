@@ -75,6 +75,15 @@ class :uc:packageServiceProvider extends ServiceProvider
     protected array $repository_map = [];
 
     /**
+     * Publishable Environment Variables
+     *
+     * @example [ 'HELLO_WORLD' => true ]
+     *
+     * @var array
+     */
+    protected array $env_vars = [];
+
+    /**
      * Perform post-registration booting of services.
      *
      * @return void
