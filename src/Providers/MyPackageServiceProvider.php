@@ -101,11 +101,7 @@ class :uc:packageServiceProvider extends ServiceProvider
     public function register(): void
     {
         // Register the service the package provides.
-        $this->app->singleton(':lc:package', function ($app) {
-            return new :uc:package;
-        });
-
-        parent::register();
+        $this->app->singleton(':lc:package', fn () => new :uc:package());
     }
 
     /**
