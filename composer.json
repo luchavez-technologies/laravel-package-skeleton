@@ -19,15 +19,16 @@
     "require": {
         "php": "^8.0",
         "illuminate/support": "~7|~8|~9",
-        "fligno/starter-kit": "^3.0"
+        "fligno/starter-kit": "^3.4"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",
         "phpunit/phpunit": "~9.0",
-        "orchestra/testbench": "~5|~6|~7",
-        "pestphp/pest": "^1.22",
-        "pestphp/pest-plugin-laravel": "^1.2",
-        "milroyfraser/pest-plugin-gwt": "^0.0.3"
+        "orchestra/testbench": "~5|~6|~7"
+    },
+    "suggest": {
+        "fligno/starter-kit": "^3.4",
+        "fligno/boilerplate-generator": "^2.4"
     },
     "autoload": {
         "psr-4": {
