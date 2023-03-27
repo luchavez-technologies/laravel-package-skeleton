@@ -2,7 +2,7 @@
 
 namespace :uc:vendor\:uc:package\Providers;
 
-use Fligno\StarterKit\Abstracts\BaseStarterKitServiceProvider as ServiceProvider;
+use Luchavez\StarterKit\Abstracts\BaseStarterKitServiceProvider as ServiceProvider;
 use :uc:vendor\:uc:package\Services\:uc:package;
 
 /**
